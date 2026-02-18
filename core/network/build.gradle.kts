@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -11,13 +13,6 @@ android {
     defaultConfig {
         minSdk = 28
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        
-        // BuildConfig for API keys
-        buildConfigField("String", "WEATHER_API_KEY", "\"\"")
-    }
-
-    buildFeatures {
-        buildConfig = true
     }
 
     compileOptions {
@@ -44,6 +39,10 @@ dependencies {
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+    
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     
     // Testing
     testImplementation(libs.junit)
