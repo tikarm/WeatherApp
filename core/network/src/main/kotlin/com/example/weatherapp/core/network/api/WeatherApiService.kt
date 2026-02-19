@@ -12,7 +12,7 @@ import retrofit2.http.Query
  */
 interface WeatherApiService {
     
-    @GET("data/3.0/weather")
+    @GET("data/2.5/weather")
     suspend fun getCurrentWeatherByCoordinates(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double,
@@ -20,14 +20,14 @@ interface WeatherApiService {
         @Query("appid") appId: String
     ): WeatherResponse
 
-    @GET("data/3.0/weather")
+    @GET("data/2.5/weather")
     suspend fun getCurrentWeatherByCity(
         @Query("q") city: String,
         @Query("units") units: String = "metric",
         @Query("appid") appId: String
     ): WeatherResponse
 
-    @GET("data/3.0/forecast")
+    @GET("data/2.5/forecast")
     suspend fun getForecastByCoordinates(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double,
@@ -35,7 +35,7 @@ interface WeatherApiService {
         @Query("appid") appId: String
     ): ForecastResponse
 
-    @GET("data/3.0/forecast")
+    @GET("data/2.5/forecast")
     suspend fun getForecastByCity(
         @Query("q") city: String,
         @Query("units") units: String = "metric",

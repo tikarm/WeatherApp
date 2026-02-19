@@ -23,6 +23,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.ktx)
+    
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
