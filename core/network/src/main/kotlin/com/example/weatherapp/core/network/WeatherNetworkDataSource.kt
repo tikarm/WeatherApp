@@ -26,13 +26,6 @@ class WeatherNetworkDataSource @Inject constructor(
         )
     }
 
-    suspend fun getCurrentWeatherByCity(city: String): WeatherResponse {
-        return weatherApiService.getCurrentWeatherByCity(
-            city = city,
-            appId = apiKey
-        )
-    }
-
     suspend fun getForecastByCoordinates(
         latitude: Double,
         longitude: Double
@@ -40,13 +33,6 @@ class WeatherNetworkDataSource @Inject constructor(
         return weatherApiService.getForecastByCoordinates(
             lat = latitude,
             lon = longitude,
-            appId = apiKey
-        )
-    }
-
-    suspend fun getForecastByCity(city: String): ForecastResponse {
-        return weatherApiService.getForecastByCity(
-            city = city,
             appId = apiKey
         )
     }

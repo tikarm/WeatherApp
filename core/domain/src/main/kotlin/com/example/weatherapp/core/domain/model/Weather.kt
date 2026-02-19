@@ -1,8 +1,5 @@
 package com.example.weatherapp.core.domain.model
 
-/**
- * Domain model for current weather data
- */
 data class Weather(
     val location: Location,
     val temperature: Temperature,

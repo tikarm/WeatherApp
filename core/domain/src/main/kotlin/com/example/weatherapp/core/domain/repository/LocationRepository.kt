@@ -8,9 +8,4 @@ interface LocationRepository {
     suspend fun getCurrentLocation(): Result<Location>
 
     suspend fun searchLocations(query: String): Result<List<Location>>
-
-    suspend fun getLocationByCoordinates(
-        latitude: Double,
-        longitude: Double
-    ): Result<Location>
 }

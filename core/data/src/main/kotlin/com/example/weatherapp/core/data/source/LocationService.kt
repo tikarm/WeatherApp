@@ -23,15 +23,9 @@ class LocationService @Inject constructor(
     private val fusedLocationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(context)
 
-    /**
-     * Get current device location
-     * @throws SecurityException if location permissions are not granted
-     * @throws Exception if location cannot be determined
-     */
     @SuppressLint("MissingPermission")
     @Throws(Exception::class)
     suspend fun getCurrentLocation(): Location {
-        // Check permissions
         if (!context.hasLocationPermission()) {
             throw SecurityException("Location permissions not granted")
         }
